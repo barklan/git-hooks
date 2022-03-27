@@ -1,12 +1,5 @@
 ---
 
-- id: circleci-config-validate
-  name: CircleCI config validation
-  description: Test if the CircleCI config is well formed.
-  entry: hooks/circleci-config-validate.sh
-  language: script
-  files: ^.circleci/config.yml$
-
 - id: go-fmt
   name: go fmt
   description: Runs `go fmt` and asserts no changes are needed.
@@ -59,3 +52,10 @@
   types: [shell]
   exclude_types: [csh, perl, python, ruby, tcsh, zsh]
   args: ['-l', '-i', '2', '-ci']
+
+- id: docker-compose-check
+  name: Validate docker-compose files
+  description: Checks that docker-compose files are valid
+  language: script
+  entry: compose-check.sh
+  files: docker-compose.y[a]{0,1}ml$
