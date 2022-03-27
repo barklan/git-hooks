@@ -57,5 +57,5 @@
   name: Validate docker-compose files
   description: Checks that docker-compose files are valid
   language: script
-  entry: compose-check.sh
+  entry: hooks/compose-check.sh
   files: docker-compose.y[a]{0,1}ml$
