@@ -1,5 +1,4 @@
 ---
-
 - id: go-fmt
   name: go fmt
   description: Runs `go fmt` and asserts no changes are needed.
@@ -34,7 +33,7 @@
   description: Forbid binary files from being committed
   entry: hooks/forbid-binary.sh
   language: script
-  types: ['binary']
+  types: ["binary"]
 
 - id: shellcheck
   name: Test shell scripts with shellcheck
@@ -51,7 +50,7 @@
   entry: hooks/shfmt.sh
   types: [shell]
   exclude_types: [csh, perl, python, ruby, tcsh, zsh]
-  args: ['-l', '-i', '2', '-ci']
+  args: ["-l", "-i", "2", "-ci"]
 
 - id: docker-compose-check
   name: Validate docker-compose files
@@ -59,3 +58,9 @@
   language: script
   entry: hooks/compose-check.sh
   files: docker-compose.y[a]{0,1}ml$
+
+- id: snake-case-filenames
+  name: Filenames must be in snake case
+  entry: filenames must be snake_case
+  language: fail
+  files: '[a-z0-9_/]*[^a-z0-9_/]+[a-z0-9_]*\.(go|py|lua|sh)$'
