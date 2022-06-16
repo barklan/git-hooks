@@ -1,8 +1,8 @@
 ---
-- id: go-fmt
-  name: go fmt
-  description: Runs `go fmt` and asserts no changes are needed.
-  entry: hooks/go-fmt.sh
+- id: go-format
+  name: go format
+  description: Runs `gofumpt` and asserts no changes are needed.
+  entry: hooks/go-format.sh
   language: script
   files: \.go$
 
