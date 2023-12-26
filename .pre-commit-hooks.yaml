@@ -6,13 +6,6 @@
   language: script
   files: \.go$
 
-- id: go-test
-  name: go test
-  description: Runs `go test` and asserts no tests are failing.
-  entry: hooks/go-test.sh
-  language: script
-  files: \.go$
-
 - id: go-mod-tidy
   name: go mod tidy
   description: Runs `go mod tidy` to ensure `go.mod` matches the project source.
