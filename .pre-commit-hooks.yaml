@@ -6,20 +6,14 @@
   language: script
   files: \.go$
 
-- id: go-mod-tidy
-  name: go mod tidy
-  description: Runs `go mod tidy` to ensure `go.mod` matches the project source.
-  entry: hooks/go-mod-tidy.sh
+- id: go-deadcode
+  name: go-deadcode
+  description: Runs `deadcode` and asserts no changes are needed.
+  entry: hooks/go-deadcode.sh
   language: script
-  files: \.go$
-
-- id: go-generate
-  name: go generate
-  description: Runs `go generate` against the projects go files.
-  entry: hooks/go-generate.sh
-  language: script
-  files: \.go$
-  always_run: true
+  types: [go]
+  require_serial: true
+  pass_filenames: false
 
 - id: forbid-binary
   name: Forbid binaries
