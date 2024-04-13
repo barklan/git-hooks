@@ -6,8 +6,8 @@ OUTPUT=$(deadcode ./...)
 
 echo "$OUTPUT"
 
-if (($(echo "$OUTPUT" | wc -l) < 1)); then
-	exit 0
+if [[ $OUTPUT = "" ]]; then
+    exit 0
 fi
 
 exit 1
