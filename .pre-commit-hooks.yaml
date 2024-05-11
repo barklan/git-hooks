@@ -6,6 +6,13 @@
   language: script
   files: \.go$
 
+- id: go-mod-version
+  name: go mod go version
+  description: Checks if patch version is found in go line in go.mod.
+  entry: hooks/go-mod-version.sh
+  language: script
+  files: go\.mod$
+
 - id: go-deadcode
   name: go-deadcode
   description: Runs `deadcode` and asserts no changes are needed.
